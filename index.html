@@ -218,7 +218,7 @@
       gap: 10px;
     }
 
-    /* 2. Services Grid */
+    /* Services Grid */
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -264,7 +264,7 @@
       line-height: 1.5;
     }
 
-    /* 3. Work Process */
+    /* Work Process */
     .process-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -312,7 +312,7 @@
       line-height: 1.4;
     }
 
-    /* 4. MODERN REVIEWS & CLIENT FEEDBACK */
+    /* Modern Reviews */
     .review-score-container {
       display: flex;
       flex-direction: column;
@@ -391,7 +391,6 @@
       font-weight: 600;
     }
 
-    /* Sub Category Ratings */
     .sub-ratings {
       display: flex;
       flex-wrap: wrap;
@@ -414,7 +413,6 @@
       font-weight: 800;
     }
 
-    /* Client Review Cards (Bangladeshi + Global Clients) */
     .client-reviews-list {
       display: grid;
       grid-template-columns: 1fr;
@@ -467,13 +465,6 @@
       font-size: 14px;
       font-weight: 700;
       color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .client-flag {
-      font-size: 14px;
     }
 
     .client-time {
@@ -492,7 +483,7 @@
       line-height: 1.5;
     }
 
-    /* Meta Ads Style Proof Cards */
+    /* Meta Proof Cards */
     .meta-proof-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -614,10 +605,60 @@
       line-height: 1.3;
     }
 
+    /* EYE CATCHY CAPITALIZED DOWNLOAD HUB SECTION */
+    .download-hub-section {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(30, 27, 75, 0.9), rgba(15, 23, 42, 0.95));
+      border: 2px solid #38bdf8;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
+      border-radius: 28px;
+      padding: 35px 20px;
+    }
+
+    .hub-title {
+      font-size: 18px; /* CONNECT WITH ME-এর চেয়ে স্পষ্ট ও বড় ফন্ট */
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: #38bdf8;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+    }
+
+    .hub-subtitle {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 25px;
+    }
+
+    .hub-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #0ea5e9, #6366f1, #a855f7);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 18px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .hub-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.8);
+      filter: brightness(1.15);
+    }
+
     /* Footer */
     footer {
       text-align: center;
-      padding: 25px 0 10px 0;
+      padding: 20px 0 10px 0;
       color: #64748b;
       font-size: 13px;
     }
@@ -758,7 +799,7 @@
       </div>
     </div>
 
-    <!-- 4. MODERN REVIEWS SECTION (Global & Local Clients) -->
+    <!-- 4. Client Reviews Section -->
     <div class="card">
       <div class="section-title">
         <i class="fa-solid fa-star" style="color: #8b5cf6;"></i>
@@ -803,7 +844,7 @@
         </div>
       </div>
 
-      <!-- Category Performance Badges -->
+      <!-- Sub Performance Badges -->
       <div class="sub-ratings">
         <div class="sub-item"><span>4.9</span> Campaign ROAS</div>
         <div class="sub-item"><span>5.0</span> Communication</div>
@@ -811,111 +852,51 @@
         <div class="sub-item"><span>4.9</span> On-Time Delivery</div>
       </div>
 
-      <!-- Client Individual Short Reviews List -->
+      <!-- Reviews Grid -->
       <div class="client-reviews-list">
-        
-        <!-- BD Client 1 -->
         <div class="client-review-item">
           <div class="client-header">
             <div class="client-user">
               <div class="client-avatar" style="background: linear-gradient(135deg, #059669, #10b981);">TR</div>
-              <div>
-                <span class="client-name">Tanvir Rahman 🇧🇩</span>
-                <span class="client-time">Dhaka, Bangladesh</span>
-              </div>
+              <div><span class="client-name">Tanvir Rahman 🇧🇩</span><span class="client-time">Dhaka, Bangladesh</span></div>
             </div>
-            <div class="client-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
+            <div class="client-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
           </div>
           <p class="client-text">"Best service! Cost per message khub komiye diyeche ebong sales onek bereche. Onek friendly ebong helpful."</p>
         </div>
 
-        <!-- USA Client 1 -->
         <div class="client-review-item">
           <div class="client-header">
             <div class="client-user">
               <div class="client-avatar" style="background: linear-gradient(135deg, #2563eb, #38bdf8);">JM</div>
-              <div>
-                <span class="client-name">James Miller 🇺🇸</span>
-                <span class="client-time">Texas, USA</span>
-              </div>
+              <div><span class="client-name">James Miller 🇺🇸</span><span class="client-time">Texas, USA</span></div>
             </div>
-            <div class="client-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
+            <div class="client-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
           </div>
           <p class="client-text">"Thanks for improving my business! Scaled our store with a solid 4.8x ROAS. Super professional and fast response."</p>
         </div>
 
-        <!-- BD Client 2 -->
         <div class="client-review-item">
           <div class="client-header">
             <div class="client-user">
               <div class="client-avatar" style="background: linear-gradient(135deg, #d97706, #f59e0b);">SA</div>
-              <div>
-                <span class="client-name">Shakil Ahmed 🇧🇩</span>
-                <span class="client-time">Chittagong, Bangladesh</span>
-              </div>
+              <div><span class="client-name">Shakil Ahmed 🇧🇩</span><span class="client-time">Chittagong, Bangladesh</span></div>
             </div>
-            <div class="client-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
+            <div class="client-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
           </div>
           <p class="client-text">"Amar page management ar ad duitar kaj e khub sundor koreche. Highly recommended for any business growth!"</p>
         </div>
 
-        <!-- UK Client 1 -->
         <div class="client-review-item">
           <div class="client-header">
             <div class="client-user">
               <div class="client-avatar" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">OW</div>
-              <div>
-                <span class="client-name">Oliver Wright 🇬🇧</span>
-                <span class="client-time">London, UK</span>
-              </div>
+              <div><span class="client-name">Oliver Wright 🇬🇧</span><span class="client-time">London, UK</span></div>
             </div>
-            <div class="client-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
+            <div class="client-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
           </div>
           <p class="client-text">"Very friendly communication and great results on Meta ads. Boosted our qualified leads in under 2 weeks."</p>
         </div>
-
-        <!-- Australia / Canada Client -->
-        <div class="client-review-item">
-          <div class="client-header">
-            <div class="client-user">
-              <div class="client-avatar" style="background: linear-gradient(135deg, #db2777, #f43f5e);">SD</div>
-              <div>
-                <span class="client-name">Sarah Davies 🇦🇺</span>
-                <span class="client-time">Sydney, Australia</span>
-              </div>
-            </div>
-            <div class="client-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-          </div>
-          <p class="client-text">"Top-notch service! Ad copies and targeting were spot on. Will definitely continue working long term."</p>
-        </div>
-
-        <!-- BD Client 3 -->
-        <div class="client-review-item">
-          <div class="client-header">
-            <div class="client-user">
-              <div class="client-avatar" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">MA</div>
-              <div>
-                <span class="client-name">Mahmudul Hasan 🇧🇩</span>
-                <span class="client-time">Sylhet, Bangladesh</span>
-              </div>
-            </div>
-            <div class="client-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-          </div>
-          <p class="client-text">"Bhai khub bhalo kaj kore. $11 khoroch kore 110+ messaging peyechilam, sob customer e responsive chilo. Thank you!"</p>
-        </div>
-
       </div>
 
       <div class="section-title" style="font-size: 18px; margin-top: 25px;">
@@ -923,15 +904,10 @@
         <span>LIVE CAMPAIGN RESULTS (META ADS)</span>
       </div>
 
-      <!-- 4 Ultra-Clean Meta Ads Style Proof Cards -->
+      <!-- 4 Meta Proof Cards -->
       <div class="meta-proof-grid">
-        
-        <!-- Card 1: Purchases / E-commerce Orders -->
         <div class="meta-card">
-          <div class="meta-top">
-            <span class="meta-title">Campaigns</span>
-            <div class="meta-icons"><i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-table-cells"></i></div>
-          </div>
+          <div class="meta-top"><span class="meta-title">Campaigns</span><div class="meta-icons"><i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-table-cells"></i></div></div>
           <div class="meta-inner">
             <div class="meta-status"><i class="fa-regular fa-clock"></i> Ended recently <i class="fa-solid fa-ellipsis-vertical meta-more"></i></div>
             <div class="meta-sub"><span class="meta-dot dot-yellow"></span> Purchases</div>
@@ -943,12 +919,8 @@
           </div>
         </div>
 
-        <!-- Card 2: Messaging / Lead Gen -->
         <div class="meta-card">
-          <div class="meta-top">
-            <span class="meta-title">Campaigns</span>
-            <div class="meta-icons"><i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-table-cells"></i></div>
-          </div>
+          <div class="meta-top"><span class="meta-title">Campaigns</span><div class="meta-icons"><i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-table-cells"></i></div></div>
           <div class="meta-inner">
             <div class="meta-status"><i class="fa-regular fa-clock"></i> Ended recently <i class="fa-solid fa-ellipsis-vertical meta-more"></i></div>
             <div class="meta-sub"><span class="meta-dot dot-yellow"></span> Completed Sales</div>
@@ -960,12 +932,8 @@
           </div>
         </div>
 
-        <!-- Card 3: High Scale Purchases -->
         <div class="meta-card">
-          <div class="meta-top">
-            <span class="meta-title">Campaigns</span>
-            <div class="meta-icons"><i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-table-cells"></i></div>
-          </div>
+          <div class="meta-top"><span class="meta-title">Campaigns</span><div class="meta-icons"><i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-table-cells"></i></div></div>
           <div class="meta-inner">
             <div class="meta-status"><i class="fa-regular fa-clock"></i> Ended recently <i class="fa-solid fa-ellipsis-vertical meta-more"></i></div>
             <div class="meta-sub"><span class="meta-dot dot-green"></span> Website Purchases</div>
@@ -977,12 +945,8 @@
           </div>
         </div>
 
-        <!-- Card 4: WhatsApp High Volume Conversations -->
         <div class="meta-card">
-          <div class="meta-top">
-            <span class="meta-title">Campaigns</span>
-            <div class="meta-icons"><i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-table-cells"></i></div>
-          </div>
+          <div class="meta-top"><span class="meta-title">Campaigns</span><div class="meta-icons"><i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-table-cells"></i></div></div>
           <div class="meta-inner">
             <div class="meta-status"><i class="fa-regular fa-clock"></i> Ended recently <i class="fa-solid fa-ellipsis-vertical meta-more"></i></div>
             <div class="meta-sub"><span class="meta-dot dot-yellow"></span> WhatsApp Conversations</div>
@@ -993,8 +957,20 @@
             </div>
           </div>
         </div>
-
       </div>
+    </div>
+
+    <!-- 5. EYE CATCHY CAPITALIZED DOWNLOAD HUB SECTION -->
+    <div class="card download-hub-section">
+      <div class="hub-title">
+        <i class="fa-solid fa-cloud-arrow-down"></i> FILES & APK DOWNLOAD HUB
+      </div>
+      <p class="hub-subtitle">Access marketing resources, client guides, APK tools, and materials in one place.</p>
+      
+      <a href="downloads.html" class="hub-btn">
+        <span>EXPLORE & DOWNLOAD FILES / APK</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
     </div>
 
     <!-- Footer -->
