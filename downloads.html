@@ -31,7 +31,6 @@
       max-width: 900px;
     }
 
-    /* Back Button */
     .back-btn {
       display: inline-flex;
       align-items: center;
@@ -53,7 +52,6 @@
       transform: translateX(-3px);
     }
 
-    /* Header */
     .hub-header {
       text-align: center;
       margin-bottom: 35px;
@@ -72,7 +70,6 @@
       margin-top: 6px;
     }
 
-    /* Grid Layout */
     .downloads-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -85,7 +82,6 @@
       }
     }
 
-    /* Download Card */
     .file-card {
       background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(16px);
@@ -107,7 +103,6 @@
       box-shadow: 0 20px 45px rgba(56, 189, 248, 0.15);
     }
 
-    /* Logo Box */
     .app-logo {
       width: 80px;
       height: 80px;
@@ -122,16 +117,15 @@
 
     .logo-green { background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; }
     .logo-red { background: linear-gradient(135deg, #ef4444, #dc2626); color: #ffffff; }
-    .logo-blue { background: linear-gradient(135deg, #0ea5e9, #2563eb); color: #ffffff; }
     .logo-yellow { background: linear-gradient(135deg, #f59e0b, #d97706); color: #ffffff; }
+    .logo-blue { background: linear-gradient(135deg, #0ea5e9, #2563eb); color: #ffffff; }
 
-    /* File Information */
     .file-name {
-      font-size: 17.5px;
+      font-size: 17px;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 6px;
-      line-height: 1.4;
+      word-break: break-word;
     }
 
     .file-meta {
@@ -141,7 +135,6 @@
       margin-bottom: 22px;
     }
 
-    /* DOWNLOAD Button */
     .download-btn {
       width: 100%;
       display: flex;
@@ -166,11 +159,14 @@
       filter: brightness(1.1);
     }
 
-    .download-btn i {
+    .loading-text {
+      text-align: center;
       font-size: 16px;
+      color: #38bdf8;
+      grid-column: 1 / -1;
+      padding: 30px;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 40px 0 10px 0;
@@ -183,80 +179,105 @@
 
   <div class="container">
     
-    <!-- Back Button -->
     <a href="index.html" class="back-btn">
       <i class="fa-solid fa-arrow-left"></i> BACK TO HOME
     </a>
 
-    <!-- Header -->
     <div class="hub-header">
       <h1>FILES & APK REPOSITORY</h1>
       <p>Download tools, client resources, APK apps, and marketing materials.</p>
     </div>
 
-    <!-- Download Grid -->
-    <div class="downloads-grid">
-
-      <!-- কার্ড ১: সরাসরি APK ফাইল ডাউনলোড -->
-      <div class="file-card">
-        <div class="app-logo logo-green">
-          <i class="fa-brands fa-android"></i>
-        </div>
-        <h3 class="file-name">Auto Marketing Tool (APK)</h3>
-        <p class="file-meta">Android APK • Direct Install • 18 MB</p>
-        <a href="files/mytool.apk" download class="download-btn">
-          <span>DOWNLOAD</span>
-          <i class="fa-solid fa-download"></i>
-        </a>
+    <!-- আপলোড করা ফাইলগুলো স্বয়ংক্রিয়ভাবে এখানে আসবে -->
+    <div class="downloads-grid" id="fileList">
+      <div class="loading-text">
+        <i class="fa-solid fa-spinner fa-spin"></i> Loading uploaded files and APKs...
       </div>
-
-      <!-- কার্ড ২: সরাসরি PDF ডকুমেন্ট ডাউনলোড -->
-      <div class="file-card">
-        <div class="app-logo logo-red">
-          <i class="fa-solid fa-file-pdf"></i>
-        </div>
-        <h3 class="file-name">Meta Ads Strategy Guide</h3>
-        <p class="file-meta">PDF Document • 4.5 MB</p>
-        <a href="files/guide.pdf" download class="download-btn">
-          <span>DOWNLOAD</span>
-          <i class="fa-solid fa-download"></i>
-        </a>
-      </div>
-
-      <!-- কার্ড ৩: সরাসরি ২য় APK / টুল -->
-      <div class="file-card">
-        <div class="app-logo logo-blue">
-          <i class="fa-solid fa-screwdriver-wrench"></i>
-        </div>
-        <h3 class="file-name">Audience Target Finder (APK)</h3>
-        <p class="file-meta">Android APK • Version 2.0 • 12 MB</p>
-        <a href="files/audience-finder.apk" download class="download-btn">
-          <span>DOWNLOAD</span>
-          <i class="fa-solid fa-download"></i>
-        </a>
-      </div>
-
-      <!-- কার্ড ৪: সরাসরি ZIP ফাইল ডাউনলোড -->
-      <div class="file-card">
-        <div class="app-logo logo-yellow">
-          <i class="fa-solid fa-file-zipper"></i>
-        </div>
-        <h3 class="file-name">Ad Copy Templates Pack</h3>
-        <p class="file-meta">ZIP Archive • 8.0 MB</p>
-        <a href="files/templates.zip" download class="download-btn">
-          <span>DOWNLOAD</span>
-          <i class="fa-solid fa-download"></i>
-        </a>
-      </div>
-
     </div>
 
-    <!-- Footer -->
     <footer>
       <p>© 2026 Monir Hossen. All Rights Reserved. | Files & APK Hub</p>
     </footer>
 
   </div>
 
+  <script>
+    const username = "info-monirhossen";
+    const repo = "info-monirhossen.github.io";
+    const folderPath = "files";
+
+    const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${folderPath}`;
+
+    function formatBytes(bytes) {
+      if (!bytes || bytes === 0) return 'Direct Download';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+    }
+
+    function getFileInfo(fileName) {
+      const ext = fileName.split('.').pop().toLowerCase();
+      
+      switch (ext) {
+        case 'apk':
+          return { icon: 'fa-brands fa-android', color: 'logo-green', type: 'Android APK' };
+        case 'pdf':
+          return { icon: 'fa-solid fa-file-pdf', color: 'logo-red', type: 'PDF Document' };
+        case 'zip':
+        case 'rar':
+        case '7z':
+          return { icon: 'fa-solid fa-file-zipper', color: 'logo-yellow', type: 'ZIP Archive' };
+        case 'exe':
+        case 'msi':
+          return { icon: 'fa-brands fa-windows', color: 'logo-blue', type: 'Windows App' };
+        default:
+          return { icon: 'fa-solid fa-file-arrow-down', color: 'logo-blue', type: 'File' };
+      }
+    }
+
+    async function loadFiles() {
+      const fileContainer = document.getElementById("fileList");
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error("No files");
+        
+        const files = await response.json();
+        fileContainer.innerHTML = "";
+
+        let validFiles = files.filter(file => file.type === "file" && file.name !== ".gitkeep");
+
+        if (validFiles.length === 0) {
+          fileContainer.innerHTML = `<div class="loading-text">No files available yet. Upload files inside the "files" folder to see them here!</div>`;
+          return;
+        }
+
+        validFiles.forEach(file => {
+          const info = getFileInfo(file.name);
+          const sizeText = formatBytes(file.size);
+
+          const card = document.createElement("div");
+          card.className = "file-card";
+          card.innerHTML = `
+            <div class="app-logo ${info.color}">
+              <i class="${info.icon}"></i>
+            </div>
+            <h3 class="file-name">${file.name}</h3>
+            <p class="file-meta">${info.type} • ${sizeText}</p>
+            <a href="${file.download_url}" download class="download-btn">
+              <span>DOWNLOAD</span>
+              <i class="fa-solid fa-download"></i>
+            </a>
+          `;
+          fileContainer.appendChild(card);
+        });
+
+      } catch (err) {
+        fileContainer.innerHTML = `<div class="loading-text">Upload files in the <b>files</b> folder of your GitHub repository!</div>`;
+      }
+    }
+
+    loadFiles();
+  </script>
 </body>
 </html>
