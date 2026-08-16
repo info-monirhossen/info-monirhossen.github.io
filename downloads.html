@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Download Files & APK | Monir Hossen</title>
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -187,9 +188,10 @@
       <p>Download tools, client resources, APK apps, and marketing materials.</p>
     </div>
 
+    <!-- আপলোড করা ফাইলগুলো স্বয়ংক্রিয়ভাবে এখানে আসবে -->
     <div class="downloads-grid" id="fileList">
       <div class="loading-text">
-        <i class="fa-solid fa-spinner fa-spin"></i> Loading repository files...
+        <i class="fa-solid fa-spinner fa-spin"></i> Loading uploaded files and APKs...
       </div>
     </div>
 
@@ -202,9 +204,9 @@
   <script>
     const username = "info-monirhossen";
     const repo = "info-monirhossen.github.io";
+    const folderPath = "files";
 
-    // Reads everything from the main repository directory
-    const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents`;
+    const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${folderPath}`;
 
     function formatBytes(bytes) {
       if (!bytes || bytes === 0) return 'Direct Download';
@@ -238,17 +240,15 @@
       const fileContainer = document.getElementById("fileList");
       try {
         const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error("Fetch failed");
+        if (!response.ok) throw new Error("No files");
         
         const files = await response.json();
         fileContainer.innerHTML = "";
 
-        // Filter out website code files and profile images
-        const ignored = ['index.html', 'downloads.html', 'readme.md', 'profile.jpg', 'logo.jpg', 'work1.jpg', 'work2.jpg', '.gitkeep'];
-        let validFiles = files.filter(file => file.type === "file" && !ignored.includes(file.name.toLowerCase()));
+        let validFiles = files.filter(file => file.type === "file" && file.name !== ".gitkeep");
 
         if (validFiles.length === 0) {
-          fileContainer.innerHTML = `<div class="loading-text">No downloadable files found. Upload your APK or PDF files directly to your repository!</div>`;
+          fileContainer.innerHTML = `<div class="loading-text">No files available yet. Upload files inside the "files" folder to see them here!</div>`;
           return;
         }
 
@@ -273,7 +273,7 @@
         });
 
       } catch (err) {
-        fileContainer.innerHTML = `<div class="loading-text">Error loading repository files.</div>`;
+        fileContainer.innerHTML = `<div class="loading-text">Upload files in the <b>files</b> folder of your GitHub repository!</div>`;
       }
     }
 
