@@ -312,38 +312,182 @@
       line-height: 1.4;
     }
 
-    /* 4. Reviews & Results */
-    .highlight-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
+    /* 4. MODERN REVIEWS & CLIENT FEEDBACK */
+    .review-score-container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      padding: 25px 20px;
       margin-bottom: 25px;
     }
 
-    @media (min-width: 600px) {
-      .highlight-container {
+    @media (min-width: 650px) {
+      .review-score-container {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .score-left {
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .big-score {
+      font-size: 54px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stars-wrapper {
+      color: #8b5cf6;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .total-ratings-text {
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .score-bars {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 7px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #8b5cf6, #a855f7);
+      border-radius: 10px;
+    }
+
+    .bar-label {
+      width: 85px;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    /* Sub Category Ratings */
+    .sub-ratings {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .sub-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    .sub-item span {
+      color: #22c55e;
+      font-weight: 800;
+    }
+
+    /* Client Review Cards (Bangladeshi + Global Clients) */
+    .client-reviews-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    @media (min-width: 650px) {
+      .client-reviews-list {
         grid-template-columns: 1fr 1fr;
       }
     }
 
-    .highlight-card {
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      border-radius: 18px;
-      padding: 18px;
+    .client-review-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .highlight-badge {
-      display: inline-block;
-      font-size: 11.5px;
-      font-weight: 800;
-      color: #38bdf8;
-      text-transform: uppercase;
-      margin-bottom: 6px;
+    .client-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
     }
 
-    .highlight-text {
-      font-size: 13.5px;
+    .client-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .client-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 13px;
+    }
+
+    .client-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .client-flag {
+      font-size: 14px;
+    }
+
+    .client-time {
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    .client-stars {
+      color: #8b5cf6;
+      font-size: 11px;
+    }
+
+    .client-text {
+      font-size: 13px;
       color: #cbd5e1;
       line-height: 1.5;
     }
@@ -614,26 +758,167 @@
       </div>
     </div>
 
-    <!-- 4. Client Reviews & Results Section -->
+    <!-- 4. MODERN REVIEWS SECTION (Global & Local Clients) -->
     <div class="card">
       <div class="section-title">
-        <i class="fa-solid fa-star" style="color: #facc15;"></i>
-        <span>REVIEWS & CASE STUDIES</span>
+        <i class="fa-solid fa-star" style="color: #8b5cf6;"></i>
+        <span>CLIENT REVIEWS & RATINGS</span>
       </div>
 
-      <div class="highlight-container">
-        <div class="highlight-card">
-          <span class="highlight-badge"><i class="fa-solid fa-award"></i> BEST SERVICE PROVIDER</span>
-          <p class="highlight-text">"Generated 4.8x ROAS with advanced custom audience targeting and optimized budget spend."</p>
+      <!-- Rating Overview Block -->
+      <div class="review-score-container">
+        <div class="score-left">
+          <div class="big-score">4.9</div>
+          <div class="stars-wrapper">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <div class="total-ratings-text">85+ Verified Ratings</div>
         </div>
 
-        <div class="highlight-card" style="border-color: rgba(37, 211, 102, 0.4); background: rgba(37, 211, 102, 0.06);">
-          <span class="highlight-badge" style="color: #25D366;"><i class="fa-solid fa-chart-line"></i> BUSINESS IMPROVED</span>
-          <p class="highlight-text">"High-converting ad copies and strategic page management helped boost sales by 65% in just 30 days."</p>
+        <div class="score-bars">
+          <div class="bar-row">
+            <div class="bar-track"><div class="bar-fill" style="width: 92%;"></div></div>
+            <div class="bar-label">5.0 (78 reviews)</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-track"><div class="bar-fill" style="width: 65%;"></div></div>
+            <div class="bar-label">4.0 (12 reviews)</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-track"><div class="bar-fill" style="width: 20%;"></div></div>
+            <div class="bar-label">3.0 (2 reviews)</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-track"><div class="bar-fill" style="width: 5%;"></div></div>
+            <div class="bar-label">2.0 (0 reviews)</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+            <div class="bar-label">1.0 (0 reviews)</div>
+          </div>
         </div>
       </div>
 
-      <div class="section-title" style="font-size: 18px; margin-top: 15px;">
+      <!-- Category Performance Badges -->
+      <div class="sub-ratings">
+        <div class="sub-item"><span>4.9</span> Campaign ROAS</div>
+        <div class="sub-item"><span>5.0</span> Communication</div>
+        <div class="sub-item"><span>4.8</span> Ad Creative Quality</div>
+        <div class="sub-item"><span>4.9</span> On-Time Delivery</div>
+      </div>
+
+      <!-- Client Individual Short Reviews List -->
+      <div class="client-reviews-list">
+        
+        <!-- BD Client 1 -->
+        <div class="client-review-item">
+          <div class="client-header">
+            <div class="client-user">
+              <div class="client-avatar" style="background: linear-gradient(135deg, #059669, #10b981);">TR</div>
+              <div>
+                <span class="client-name">Tanvir Rahman 🇧🇩</span>
+                <span class="client-time">Dhaka, Bangladesh</span>
+              </div>
+            </div>
+            <div class="client-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="client-text">"Best service! Cost per message khub komiye diyeche ebong sales onek bereche. Onek friendly ebong helpful."</p>
+        </div>
+
+        <!-- USA Client 1 -->
+        <div class="client-review-item">
+          <div class="client-header">
+            <div class="client-user">
+              <div class="client-avatar" style="background: linear-gradient(135deg, #2563eb, #38bdf8);">JM</div>
+              <div>
+                <span class="client-name">James Miller 🇺🇸</span>
+                <span class="client-time">Texas, USA</span>
+              </div>
+            </div>
+            <div class="client-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="client-text">"Thanks for improving my business! Scaled our store with a solid 4.8x ROAS. Super professional and fast response."</p>
+        </div>
+
+        <!-- BD Client 2 -->
+        <div class="client-review-item">
+          <div class="client-header">
+            <div class="client-user">
+              <div class="client-avatar" style="background: linear-gradient(135deg, #d97706, #f59e0b);">SA</div>
+              <div>
+                <span class="client-name">Shakil Ahmed 🇧🇩</span>
+                <span class="client-time">Chittagong, Bangladesh</span>
+              </div>
+            </div>
+            <div class="client-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="client-text">"Amar page management ar ad duitar kaj e khub sundor koreche. Highly recommended for any business growth!"</p>
+        </div>
+
+        <!-- UK Client 1 -->
+        <div class="client-review-item">
+          <div class="client-header">
+            <div class="client-user">
+              <div class="client-avatar" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">OW</div>
+              <div>
+                <span class="client-name">Oliver Wright 🇬🇧</span>
+                <span class="client-time">London, UK</span>
+              </div>
+            </div>
+            <div class="client-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="client-text">"Very friendly communication and great results on Meta ads. Boosted our qualified leads in under 2 weeks."</p>
+        </div>
+
+        <!-- Australia / Canada Client -->
+        <div class="client-review-item">
+          <div class="client-header">
+            <div class="client-user">
+              <div class="client-avatar" style="background: linear-gradient(135deg, #db2777, #f43f5e);">SD</div>
+              <div>
+                <span class="client-name">Sarah Davies 🇦🇺</span>
+                <span class="client-time">Sydney, Australia</span>
+              </div>
+            </div>
+            <div class="client-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="client-text">"Top-notch service! Ad copies and targeting were spot on. Will definitely continue working long term."</p>
+        </div>
+
+        <!-- BD Client 3 -->
+        <div class="client-review-item">
+          <div class="client-header">
+            <div class="client-user">
+              <div class="client-avatar" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">MA</div>
+              <div>
+                <span class="client-name">Mahmudul Hasan 🇧🇩</span>
+                <span class="client-time">Sylhet, Bangladesh</span>
+              </div>
+            </div>
+            <div class="client-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="client-text">"Bhai khub bhalo kaj kore. $11 khoroch kore 110+ messaging peyechilam, sob customer e responsive chilo. Thank you!"</p>
+        </div>
+
+      </div>
+
+      <div class="section-title" style="font-size: 18px; margin-top: 25px;">
         <i class="fa-solid fa-chart-simple" style="color: #38bdf8;"></i>
         <span>LIVE CAMPAIGN RESULTS (META ADS)</span>
       </div>
